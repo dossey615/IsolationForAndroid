@@ -13,8 +13,12 @@ public class SelectPartsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_parts);
-        Button sendButton = findViewById(R.id.parts1);
-        sendButton.setOnClickListener(new View.OnClickListener() {
+
+        Button neckButton = findViewById(R.id.parts1);
+        Button breastButton = findViewById(R.id.parts2);
+        Button hipButton = findViewById(R.id.parts3);
+
+        neckButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplication(), PartsDescriptionActivity.class);
                 String message = "練習部位：首";
@@ -22,5 +26,24 @@ public class SelectPartsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        breastButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), PartsDescriptionActivity.class);
+                String message = "練習部位：胸";
+                intent.putExtra(PARTS_DATA,message);
+                startActivity(intent);
+            }
+        });
+
+        hipButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), PartsDescriptionActivity.class);
+                String message = "練習部位：腰";
+                intent.putExtra(PARTS_DATA,message);
+                startActivity(intent);
+            }
+        });
+
     }
 }
