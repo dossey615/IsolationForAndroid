@@ -15,9 +15,11 @@ public class SelectPartsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_select_parts);
 
         Button neckButton = findViewById(R.id.parts1);
-        Button breastButton = findViewById(R.id.parts2);
+        Button breastButton = findViewById(R.isd.parts2);
         Button hipButton = findViewById(R.id.parts3);
 
+
+        //それぞれのボタンを押した時の設定
         neckButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplication(), PartsDescriptionActivity.class);
